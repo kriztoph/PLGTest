@@ -1,0 +1,59 @@
+<% content_for :title do %>
+	Contact
+<% end %>
+
+<div id="contact_left">
+	<h5>Both Offices</h5>
+	<p>
+		Tel. 415.839.8779 <br/>
+		Fax. 415.376.0956
+	</p>
+	<div class="locations_list">
+		<div class="location">
+			<div class="location_details">
+				<p>
+					<span class="location_title">San Francisco</span><br/>
+					580 California Street <br/>
+					Suite 1600 <br/>
+					San Francisco, CA  94104
+				</p>
+				<p>
+					<a href="http://maps.google.com/maps?saddr=&daddr=580%20california%20street,%20san%20francisco,%20ca">Get Directions</a>
+				</p>
+			</div>
+			<div class="location_map" id="sf_map"></div>
+		</div>
+		<div class="location">
+			<div class="location_details">
+				<p>
+					<span class="location_title">Walnut Creek</span><br/>
+					2175 N. California Blvd.<br/>
+					Suite 805 <br/>
+					Walnut Creek, CA 94596
+				</p>
+				<p>
+					<a href="http://maps.google.com/maps?saddr=&daddr=2175%20n.%20california%20blvd,%20walnut%20creek,%20ca">Get Directions</a>
+				</p>
+			</div>
+			<div class="location_map" id="wc_map"></div>
+		</div>
+	</div> 
+</div>
+
+<div id="contact_right">
+	<h5>Attorneys</h5>
+	<div class="contact_list">
+	<% @employees.each do |employee |%>
+		<div class="contact">
+			<div class="contact_photo">
+				<%= image_tag ('biopics/' + employee.initials.downcase + 'thumb.jpg'), :height => '80px;' %>
+			</div>
+			<div class="contact_details">
+				<span class="contact_name"><%= employee.full_name %></span> <br/>
+				<a href="mailto:<%= employee.email %>"><%= employee.email %></a><br/>
+				Direct: <%= employee.direct_number %>
+			</div>
+		</div>
+	<% end %>
+	</div>
+</div>

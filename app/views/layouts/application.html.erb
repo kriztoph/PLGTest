@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Plg</title>
+	<%= stylesheet_link_tag    "application" %>
+	<%= stylesheet_link_tag    "StyleSheet" %>
+	<%= javascript_include_tag "application" %>
+	<%= javascript_include_tag "jquery.corner" %>
+	<%= javascript_include_tag "popup" %>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA2-ed7OmmwifGLjduTYIMB4ffqGv8Ohxc&sensor=false"></script>
+	<%= csrf_meta_tags %>
+</head>
+<body onload="initialize()">
+	<div id="container">
+        <div id="logo_header">
+            <%= image_tag "logolarge.png", :id => 'logo' %>
+        </div>
+        <div id="navbackground">
+            <div id="nav">
+                <ul>
+                    <li><%= link_to "THE FIRM", "/home" %></li>
+					<li><%= link_to "ATTORNEYS", "/attorneys" %></li>
+					<li><%= link_to "CONTACT", "/contact" %></li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            <div id="main_right">
+                <h4>
+					<%= yield :title %>
+                </h4>
+                <div class="main_body">
+					<%= yield %>
+                </div>
+            </div>
+        </div>
+		<div id="footer">
+            <div id="footer_left">
+                &copy Putterman Logan & Giles 2011</div>
+            <div id="footer_right">
+            </div>
+        </div>
+        <div style="clear: both;">
+        </div>
+    </div>
+</body>
+</html>

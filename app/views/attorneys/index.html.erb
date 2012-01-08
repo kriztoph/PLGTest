@@ -1,0 +1,19 @@
+<% content_for :title do %>
+	Attorneys
+<% end %>
+
+<div id="employee_list">
+<% @employees.each do |employee| %>
+	<div class="employee">
+		<div class="photo">
+			<%= image_tag ('biopics/' + employee.initials.downcase + 'thumb.jpg') %>
+		</div>
+		<div class="short_bio">
+			<div class="name">
+				<%= employee.full_name %>
+			</div>
+			<%= employee.short_bio %> <span class="full_bio"><%= raw employee.full_bio %></span></br><a class="link_to_full_bio">More...</a>
+		</div>
+	</div>
+<% end %>
+</div>

@@ -1,0 +1,15 @@
+<% content_for :title do %>
+	<%= link_to "Attorneys", attorneys_path %> <span style="font-size:.8em; padding:0 3px;">></span> <%= @employee.full_name %> 
+<% end %>
+<div class="employee">
+	<div class="photo">
+		<%= image_tag ('biopics/' + @employee.initials.downcase + 'thumb.jpg') %>
+	</div>
+	<div class="short_bio">
+		<div class="name">
+			<a href="#" class="link_to_full_bio"><%= @employee.full_name %></a>
+		</div>
+		<%= raw @employee.short_bio %> <br />
+		<%= raw @employee.full_bio %>
+	</div>
+</div>
